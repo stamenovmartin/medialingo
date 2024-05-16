@@ -30,7 +30,7 @@ export const Unit=({
             <UnitBanner title={title} description={description}/>
             <div className="flex items-center flex-col relative">
                 {lessons.map((lesson,index)=>{
-                    const isCurrent=true || lesson.id===activeLesson?.id;//todo remove true
+                    const isCurrent=true || lesson.id===activeLesson?.id;//todo remove later
                     const isLocked=!lesson.completed&&!isCurrent;
                     return(
                         <LessonButton
