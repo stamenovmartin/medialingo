@@ -4,14 +4,19 @@ import { Header } from "./header";
 import { UserProgress } from "@/components/user-progress";
 import { getUserProgress } from "@/db/queries";
 import { redirect } from "next/navigation";
+import { getUnits } from "@/db/queries";
 
-
+import {Unit} from './unit';
 const LearnPage = async() =>{
     const userProgressData = getUserProgress();
+    const unitsData=getUnits()
 
     const [
-        userProgress] = await Promise.all([
-            userProgressData
+        userProgress,
+        units
+        ] = await Promise.all([
+            userProgressData,
+            unitsData,
         ]);
     
     if (!userProgress || !userProgress.activeCourse) {
@@ -27,7 +32,20 @@ const LearnPage = async() =>{
        hasActiveSubscription={false}/>
        </StickyWrapper>
        <FeedWrapper>
-        <Header title={userProgress.activeCourse.title} />
+        <Header title={userProgress.activeCourse.title}/>
+        {units.map((unit)=>(
+            <div key={unit.id} className="mb-10">
+                <Unit
+                id={unit.id}
+                ordder={unit.ordder}
+                description={unit.description}
+                title={unit.title}
+                lessons={unit.lessons}
+                activeLesson={undefined}
+                activeLessonPercentage={0}/>
+
+            </div>
+        ))}
        </FeedWrapper>
     </div>
     );

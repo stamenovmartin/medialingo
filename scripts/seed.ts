@@ -11,6 +11,13 @@ import {neon} from "@neondatabase/serverless";
         console.log("Seeding database");
         await db.delete(schema.courses);
         await db.delete(schema.userProgress);
+        await db.delete(schema.units);
+        await db.delete(schema.lessons);
+        await db.delete(schema.challanges);
+        await db.delete(schema.challangeOptions);
+        await db.delete(schema.challangeProgress);
+     
+        
         await db.insert(schema.courses).values([
             {
                 id:1,
@@ -37,9 +44,60 @@ import {neon} from "@neondatabase/serverless";
                 title:"Français",
                 imageSrc:"/france.svg",
             },
+        ]);
 
+        await db.insert(schema.units).values([
+            {
+                id:1,
+                courseId:1,
+                title:"Тема 1",
+                description:"Научи ги основите",
+                ordder:1
+            }
+        ])
 
+        await db.insert(schema.lessons).values([
+            {
+                id:1,
+                unitId:1,// for unit 1
+                order:1,
+                title:"Лажни вести на социјални мрежи"
+            },
+           
+        ]);
 
+        await db.insert(schema.challanges).values([
+            {
+                id:1,
+                lessonId:1,//лажмни вести
+                type:"SELECT",
+                order:1,
+                question:"Препознај кое од наведениве е лажна вес?",
+            },
+            
+        ]);
+        await db.insert(schema.challangeOptions).values([
+            {
+                id:1,
+                challangeId:1,
+                imageSrc:"fakeNews3.png",//ова е фејк, другите се точни
+                correct:true,
+                text:"",
+            },
+            {
+                id:2,
+                challangeId:1,
+                imageSrc:"fakeNews1.png",
+                correct:false,
+                text:"",
+            },
+            {
+                id:3,
+                challangeId:1,
+                imageSrc:"fakeNews2.png",
+                correct:false,
+                text:"",
+            },
         ]);
 
         console.log("Seeding finished");

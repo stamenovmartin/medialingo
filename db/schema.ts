@@ -24,7 +24,7 @@ export const unitsRelations=relations(units,({many,one})=>({
         fields:[units.courseId],
         references:[courses.id],
     }),
-    lesson:many(lessons)
+    lessons:many(lessons)
 }));
 export const lessons=pgTable("lessons",{
     id:serial("id").primaryKey(),
@@ -79,7 +79,7 @@ export const challangeOptionsRelations=relations(challangeOptions,({one})=>({
 
 export const challangeProgress=pgTable("challange_progress",{
     id:serial("id").primaryKey(),
-    userId:integer("user_id").notNull(),
+    userId:text("user_id").notNull(),
     challangeId:integer("challange_id").references(()=>challanges.id,{
         onDelete:"cascade"}).notNull(),
    completed:boolean("completed").notNull().default(false),
