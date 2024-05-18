@@ -63,6 +63,30 @@ import {neon} from "@neondatabase/serverless";
                 order:1,
                 title:"Лажни вести на социјални мрежи"
             },
+            {
+                id:2,
+                unitId:1,// for unit 1
+                order:2,
+                title:"Сатира/Пародија"
+            },
+            {
+                id:3,
+                unitId:1,// for unit 1
+                order:3,
+                title:"Пропаганда"
+            },
+            {
+                id:4,
+                unitId:1,// for unit 1
+                order:4,
+                title:"Манипулирана содржина"
+            },
+            {
+                id:5,
+                unitId:1,// for unit 1
+                order:5,
+                title:"Лажни наслови"
+            },
            
         ]);
 
@@ -72,7 +96,7 @@ import {neon} from "@neondatabase/serverless";
                 lessonId:1,//лажмни вести
                 type:"SELECT",
                 order:1,
-                question:"Препознај кое од наведениве е лажна вес?",
+                question:"Препознај кое од наведениве е лажна вест?",
             },
             
         ]);
@@ -80,23 +104,23 @@ import {neon} from "@neondatabase/serverless";
             {
                 id:1,
                 challangeId:1,
-                imageSrc:"fakeNews3.png",//ова е фејк, другите се точни
+                imageSrc:"/fakeNews3.svg",//ова е фејк, другите се точни
                 correct:true,
-                text:"",
+                text:"Месото од Мекдоналдс е од црви",
             },
             {
                 id:2,
                 challangeId:1,
-                imageSrc:"fakeNews1.png",
+                imageSrc:"/fakeNews1.svg",
                 correct:false,
-                text:"",
+                text:"Елон Маск го купи Твитер",
             },
             {
                 id:3,
                 challangeId:1,
-                imageSrc:"fakeNews2.png",
+                imageSrc:"/fakeNews2.svg",
                 correct:false,
-                text:"",
+                text:"Македонија ќе игра на светско",
             },
         ]);
 
