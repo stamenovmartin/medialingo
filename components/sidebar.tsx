@@ -23,7 +23,7 @@ export const Sidebar = ({className}:Props) =>{
           <SidebarItem label="Научи" href="/learn" iconSrc="/learn.svg" />
           <SidebarItem label="Табела со поени" href="/leaderboard" iconSrc="/leaderboard.svg" />
           <SidebarItem label="Мисии" href="/quests" iconSrc="/quests.svg" />
-          <SidebarItem label="Продавница" href="/shop" iconSrc="/shop.svg" />
+          <SidebarItem label="Продавница" href="/store" iconSrc="/shop.svg" />
         </div>
         <div className="p-4">
         <ClerkLoading>

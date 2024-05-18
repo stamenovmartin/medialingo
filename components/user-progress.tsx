@@ -24,13 +24,13 @@ export const UserProgress = ({activeCourse,points,hearts,hasActiveSubscription}:
             />
         </Button>
         </Link>
-        <Link href="/shop">
+        <Link href="/store">
             <Button variant="ghost" className="text-orange-500">
            <Image src="/points.svg" height={28} width={28}alt="Поени" className="mr-2" />
            {points}
             </Button>
         </Link>
-        <Link href="/shop">
+        <Link href="/store">
             <Button variant="ghost" className="text-rose-500">
            <Image src="/heart.svg" height={22} width={22}alt="Срциња" className="mr-2" />
            {hasActiveSubscription ? <InfinityIcon className="h-4 w-4 stroke-[3] " />: hearts }
