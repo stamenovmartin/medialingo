@@ -7,7 +7,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import {eq,and} from 'drizzle-orm';
 import { error } from "console";
-const POINTS_TO_REFILL=10;
+import { POINTS_TO_REFILL } from "@/constants";
+//const POINTS_TO_REFILL=10;
 
 export const upsertUserProgress = async (courseId: number) =>{
     const {userId} = await auth();
@@ -25,11 +26,11 @@ export const upsertUserProgress = async (courseId: number) =>{
 
 
 
-// TODO ENABLE ONCE UNITS AND LESSONS ARE ADDED
-   // if (!course.units.length || !course.unites[0].lessons.length)
-    //    {
-     //       throw new Error("Course is empty");
-     //   }
+
+    if (!course.units.length || !course.units[0].lessons.length)
+        {
+            throw new Error("Course is empty");
+        }
 
     const existingUserProgress = await getUserProgress();
 

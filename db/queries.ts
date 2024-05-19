@@ -40,11 +40,14 @@ export const getUnits=cache(async()=>{
         return [];
     }
     const data=await db.query.units.findMany({
+        orderBy:(units, {asc}) =>[asc(units.ordder)],
         where:eq(units.courseId,userProgress.activeCourseId),
         with:{
             lessons:{
+                orderBy:(lessons, {asc}) =>[asc(lessons.order)],
                 with:{
                     challanges:{
+                        orderBy:(challanges, {asc}) =>[asc(challanges.order)],
                        with:{
                         challangeProgress:{
                             where: eq(challangeProgress.userId,
@@ -83,7 +86,16 @@ export const getUnits=cache(async()=>{
 export const getCourseById = cache(async(courseId: number) =>{
     const data = await db.query.courses.findFirst({
         where: eq(courses.id,courseId),
-        //TODO populate units and lessons
+        with: {
+            units: {
+                orderBy: (units,{asc}) => [asc(units.ordder)],
+                with: {
+                  lessons :{
+                    orderBy:(lessons,{asc}) =>[asc(lessons.order)],
+                  }, 
+                },
+            },
+        },
     });
     return data;
 });
@@ -190,4 +202,23 @@ const percentage = Math.round((completedChallenges.length/lesson.challanges.leng
 
 return percentage;
 
+});
+
+export const getTopTenUsers = cache(async() =>{
+    const {userId} = await auth();
+
+    if(!userId){
+        return [];
+    }
+    const data = await db.query.userProgress.findMany({
+        orderBy: (userProgress,{desc}) => [desc(userProgress.points)],
+        limit:10,
+        columns: {
+            userId: true,
+            userName: true,
+            userImageSrc: true,
+            points: true,
+        },
+    });
+    return data;
 });

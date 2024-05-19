@@ -57,7 +57,7 @@ export const upsertChallangeProgress=async(challangeId:number)=>{
         completed:true,
     });
     await db.update(userProgress).set({
-        points:currentUserProgress.points+10,
+        points:currentUserProgress.points+15,
 
     }).where(eq(userProgress.userId,userId));
         revalidatePath("/learn");

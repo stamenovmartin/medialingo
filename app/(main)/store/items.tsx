@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { useTransition } from 'react';
 import { refillHearts } from '@/actions/user-progress';
 import { toast } from 'sonner';
-const POINTS_TO_REFILL=10;
+import { POINTS_TO_REFILL } from '@/constants';
+//const POINTS_TO_REFILL=10;
 type Props={
     hearts:number;
     points:number;
