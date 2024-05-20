@@ -8,28 +8,19 @@ export const Footer = () => {
             <div className="max-w-screen-lg mx-auto flex items-center justify-evenly h-full">
                 <Button size="lg" variant="ghost" className="w-full">
                     <Image src="/macedonia.svg" alt="Macedonian" height={40} width={40} className="mr-4 rounded-md"/>
-                    Македонски
+                    Борба против дезинформации
                 </Button>
                 <div className="w-8" /> {/* Spacer */}
                 <Button size="lg" variant="ghost" className="w-full">
                     <Image src="/uk.svg" alt="English" height={40} width={40} className="mr-4 rounded-md"/>
-                    Англиски
+                    Кибер сигурност
                 </Button>
                 <div className="w-8" /> {/* Spacer */}
                 <Button size="lg" variant="ghost" className="w-full">
                     <Image src="/germany.svg" alt="German" height={40} width={40} className="mr-4 rounded-md"/>
-                    Германски
+                    ВИ писменост
                 </Button>
-                <div className="w-8" /> {/* Spacer */}
-                <Button size="lg" variant="ghost" className="w-full">
-                    <Image src="/france.svg" alt="French" height={40} width={40} className="mr-4 rounded-md"/>
-                    Француски
-                </Button>
-                <div className="w-8" /> {/* Spacer */}
-                <Button size="lg" variant="ghost" className="w-full">
-                    <Image src="/spain.svg" alt="Spanish" height={40} width={40} className="mr-4 rounded-md"/>
-                    Шпански
-                </Button>
+    
             </div>
         </footer>
     );
