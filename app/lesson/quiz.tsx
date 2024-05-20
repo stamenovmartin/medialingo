@@ -179,7 +179,7 @@ export const Quiz = ({
         );
     }
 
-    const title = challange.type ==="ASSIST" ? "Select the correct meaning": 
+    const title = challange.type ==="ASSIST" ? "Медиалинго": 
     challange.question;
 
 

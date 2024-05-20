@@ -44,8 +44,7 @@ export const DELETE = async(
 ) =>{
  if(!IsAdmin) {
     return new NextResponse("Unauthorized",{status:403})
- }
- 
+   }
     const data = await db.delete(challanges).where(eq(challanges.id, params.challangeId)).returning();
 
  return NextResponse.json(data[0]);
