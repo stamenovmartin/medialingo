@@ -9,9 +9,24 @@ export default function Home() {
      <Image src ="/Hero.svg" fill alt="Hero" />
    </div>
    <div className="flex flex-col items-center gap-y-8">
-        <h1 className="text-xl lg:text-3xl font-bold text-neutral-600 max-w-[480px] text-center">
-          Научи како со Медиалинго !
-        </h1>
+   <h1 className="text-lg lg:text-2xl font-extrabold text-neutral-700 max-w-[600px] text-center p-8 bg-gradient-to-r from-green-200 rounded-2xl border-2 border-green-400 shadow-2xl relative">
+  Здраво играчу!
+  <span className="block mt-4">
+    Моето име е Медиалинго. Јас сум карактерот што има секакви познавања во областа на медиумската писменост, вештачката интелигенција и сајбер безбедноста!
+  </span>
+  <span className="block mt-4">
+    Спремен си да ме победиш? Да освојуваш поени со решавање на прашања, загатки и безброј други активности? Да научиш нешто ново? Спремен за авантура?
+  </span>
+  <span className="block mt-4">
+   Ако одговор е да! Стисни на копчето „започни“ !
+  </span>
+  
+  {/* Triangle Arrow */}
+  <span className="absolute bottom-[-15px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-t-[15px] border-t-green-300 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent"></span>
+</h1>
+
+
+
         <div className="flex flex-col items-center gap-y-3 max-w-[330px] w-full">
           <ClerkLoading>
             <><Loader className="h-5 w-5 text-muted-foreground animate-spin">
@@ -33,7 +48,7 @@ export default function Home() {
             <SignedIn>
               <Button size="lg" variant={"secondary"} className="w-full" asChild>
                 <Link href="/learn">
-                Продолжи со учење
+                Започни
                 </Link>
               </Button>
             </SignedIn>

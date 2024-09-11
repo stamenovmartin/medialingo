@@ -1,7 +1,9 @@
 import "dotenv/config";
 import {drizzle} from "drizzle-orm/neon-http";
 import {neon} from "@neondatabase/serverless";
- import * as schema from "../db/schema";
+import * as schema from "../db/schema";
+import dotenv from 'dotenv';
+dotenv.config({ path: '.env.local' });  // Ensure it loads the correct .env file
 
  const sql = neon(process.env.DATABASE_URL!);
 //@ts-ignore
