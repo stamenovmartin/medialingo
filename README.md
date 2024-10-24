@@ -53,7 +53,7 @@ This README provides clear instructions and highlights the key aspects of the ga
 ![medialingo7](https://github.com/user-attachments/assets/81b2ddef-bf33-42e0-bd5f-788444e38431)
 
 
-# This README provides clear instructions and highlights the key aspects of the game.
+ This README provides clear instructions and highlights the key aspects of the game.
 
 
  
