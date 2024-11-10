@@ -36,7 +36,6 @@ Check out the live demo here:
    
 ## Images from the game:
 
-This README provides clear instructions and highlights the key aspects of the game.
  # Cover  
  ![medialingo1](https://github.com/user-attachments/assets/063d503b-0148-4e96-9c74-6d5b195612f8)
  # Games 
